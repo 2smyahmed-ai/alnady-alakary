@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Services — a four-stage journey drawn as one continuous line, not four
+   boxes. Each stage extends the rule back into the gap behind it, so the row
+   reads as a single rule with markers on it.
+   ========================================================================== */
+
+.process {
+  --process-gap: clamp(1.25rem, 0.5rem + 2.4vw, 3rem);
+
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--process-gap);
+}
+
+.stage {
+  position: relative;
+  padding-top: clamp(1.75rem, 1.4rem + 1.2vw, 2.5rem);
+}
+
+.stage::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: calc(var(--process-gap) * -1) 0;
+  height: 1px;
+  background-color: rgba(247, 245, 241, 0.22);
+}
+
+/* The first stage starts the line rather than continuing one */
+.stage:first-child::before { inset-inline-start: 0; }
+
+/* Marker sitting on the rule, aligned to the numeral below it */
+.stage::after {
+  content: "";
+  position: absolute;
+  inset-block-start: -3.5px;
+  inset-inline-start: 0;
+  width: 7px;
+  height: 7px;
+  background-color: var(--accent);
+  rotate: 45deg;
+}
+
+.stage__num {
+  display: block;
+  margin-bottom: 0.85rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--ink-fg);
+}
+
+.stage__title {
+  margin-bottom: 0.6rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--ink-fg);
+  line-height: 1.45;
+}
+
+.stage__text {
+  color: var(--ink-fg-soft);
+  font-size: var(--fs-sm);
+  line-height: 1.85;
+}
+
+/* ---- Closing action ---------------------------------------------------------
+   The services chapter is where the club actually sells, so the ask sits at
+   the end of it rather than only in the header. */
+
+.services__cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(1rem, 0.6rem + 1.6vw, 2rem);
+  margin-top: clamp(2.5rem, 1.6rem + 3vw, 4.5rem);
+  padding-top: clamp(1.75rem, 1.2rem + 1.8vw, 2.75rem);
+  border-top: 1px solid rgba(247, 245, 241, 0.22);
+}
+
+.services__hint {
+  color: var(--ink-fg-dim);
+  font-size: var(--fs-sm);
+}

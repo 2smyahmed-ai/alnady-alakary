@@ -1,0 +1,171 @@
+/* ==========================================================================
+   Project detail dialog
+
+   Built on the native <dialog>, which brings the focus trap, Escape to close,
+   the backdrop and inert background content with no script of our own.
+
+   The layout is two columns rather than a stacked image: at full width the
+   photograph pushed every fact below the fold, so the project details were
+   only reachable by scrolling.
+   ========================================================================== */
+
+.project-dialog {
+  /* Centred explicitly: the UA stylesheet only centres a modal dialog on the
+     inline axis, which leaves it pinned to the top of the viewport. */
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(68rem, calc(100vw - 2rem));
+  max-height: min(90svh, 46rem);
+  padding: 0;
+  border: 0;
+  color: var(--ink-fg-soft);
+  background-color: var(--ink-900);
+  /* The dialog itself never scrolls — only the text column does — so RTL
+     never parks a full-height scrollbar down the outside edge. */
+  overflow: hidden;
+}
+
+/* The dialog is focused programmatically on open so screen readers announce
+   it; it is a container, not a control, so it takes no visible ring. Every
+   control inside it keeps its own. */
+.project-dialog:focus,
+.project-dialog:focus-visible { outline: none; }
+
+.project-dialog::backdrop {
+  background-color: rgba(4, 10, 19, 0.86);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.project-dialog__close {
+  position: absolute;
+  inset-block-start: 0;
+  /* inline end = top left in RTL, the conventional close corner */
+  inset-inline-end: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  color: var(--ink-fg);
+  background-color: rgba(4, 10, 19, 0.6);
+  transition: background-color var(--dur-fast) var(--ease);
+}
+
+.project-dialog__close:hover { background-color: var(--accent); color: #04130b; }
+
+/* ---- Layout ------------------------------------------------------------- */
+
+.detail {
+  display: grid;
+  /* The photograph gets the wider column: these are landscape event shots,
+     and an even split crops them to a portrait sliver. */
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  /* Short copy would otherwise squash the image to the height of four facts */
+  min-height: min(62svh, 27rem);
+  max-height: min(90svh, 46rem);
+}
+
+.detail__media { min-height: 0; }
+
+.detail__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Event photography puts its subjects above the centre line */
+  object-position: 50% 38%;
+}
+
+.detail__body {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1.5rem, 1rem + 2vw, 2.75rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(167, 180, 196, 0.35) transparent;
+}
+
+.detail__body::-webkit-scrollbar { width: 6px; }
+.detail__body::-webkit-scrollbar-thumb { background-color: rgba(167, 180, 196, 0.35); }
+
+/* ---- Content ------------------------------------------------------------- */
+
+.detail__title {
+  margin-bottom: var(--space-5);
+  font-size: clamp(1.35rem, 1.05rem + 1.1vw, 1.95rem);
+  line-height: 1.32;
+}
+
+/* Facts as a definition list: the labels are data, not decoration */
+.detail__facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5) var(--space-4);
+  margin-bottom: var(--space-5);
+  padding-block: var(--space-5);
+  border-block: 1px solid var(--rule-on-ink);
+}
+
+.detail__facts dt {
+  margin-bottom: 0.3rem;
+  color: var(--ink-fg-dim);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+}
+
+.detail__facts dd {
+  margin: 0;
+  color: var(--ink-fg);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.detail__subhead {
+  margin-bottom: var(--space-4);
+  color: var(--ink-fg-dim);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+}
+
+.detail__text {
+  margin-bottom: var(--space-5);
+  font-size: var(--fs-sm);
+  line-height: 1.9;
+}
+
+/* Scope of work. Add an outcome list the same way once the client supplies
+   per-project results — the styling already covers it. */
+.detail__list {
+  display: grid;
+  gap: 0.65rem;
+  margin-bottom: var(--space-6);
+}
+
+.detail__list li {
+  display: flex;
+  gap: 0.7rem;
+  font-size: var(--fs-sm);
+  line-height: 1.8;
+}
+
+.detail__list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex: none;
+  margin-top: 0.7em;
+  background-color: var(--accent);
+  rotate: 45deg;
+}
+
+/* The ask sits at the foot of the column whatever the copy length */
+.detail__body .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}

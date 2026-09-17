@@ -1,0 +1,30 @@
+# ---------------------------------------------------------------------------
+# Client working material.
+#
+# This repository is public, so the internal brief documents and the raw
+# source files stay out of it. Everything the site actually serves has already
+# been processed into assets/ — these are the inputs, not the deliverable.
+#
+# To publish them anyway, delete the block below and re-add the files.
+# ---------------------------------------------------------------------------
+
+# Internal briefs and the agency reference mockup
+*.pdf
+*.docx
+reference.jpeg
+
+# Raw sources: originals of what now lives in assets/images and assets/logos
+PICS/
+LOGO.jpg
+LOGO2.jpg
+WhatsApp Image*.jpeg
+
+# ---------------------------------------------------------------------------
+# OS and editor noise
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/

@@ -1,0 +1,95 @@
+/* ==========================================================================
+   Actions — a small, square button family plus the persistent WhatsApp affordance
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 1rem 1.9rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-text);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition:
+    background-color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease);
+}
+
+.btn svg { flex: none; }
+
+.btn--primary { background-color: var(--accent); color: #04130b; }
+.btn--primary:hover { background-color: var(--accent-lift); }
+
+/* Outline on ink */
+.btn--line {
+  border-color: rgba(247, 245, 241, 0.3);
+  color: var(--ink-fg);
+}
+
+.btn--line:hover {
+  border-color: var(--ink-fg);
+  background-color: rgba(247, 245, 241, 0.06);
+}
+
+.btn--lg { padding: 1.3rem 2.75rem; font-size: clamp(1rem, 0.9rem + 0.4vw, 1.15rem); }
+.btn--block { width: 100%; }
+
+/* ==========================================================================
+   Floating WhatsApp button — the brief requires it to stay reachable
+   ========================================================================== */
+
+.whatsapp-float {
+  position: fixed;
+  inset-block-end: clamp(1rem, 0.4rem + 1.8vw, 2rem);
+  /* inline end = bottom left in RTL: the mirror of the familiar FAB slot */
+  inset-inline-end: clamp(1rem, 0.4rem + 1.8vw, 2rem);
+  z-index: var(--z-float);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem 1.25rem 0.7rem 0.7rem;
+  border-radius: 999px;
+  background-color: var(--accent);
+  color: #04130b;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.85);
+
+  /* Held back until the hero CTA scrolls away so the two never compete.
+     Without JS nothing would ever reveal it, hence the no-JS rule below. */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.75rem);
+  transition:
+    opacity var(--dur-mid) var(--ease),
+    transform var(--dur-mid) var(--ease),
+    visibility var(--dur-mid) var(--ease),
+    background-color var(--dur-fast) var(--ease);
+}
+
+.whatsapp-float.is-visible,
+html:not(.has-js) .whatsapp-float {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.whatsapp-float:hover { background-color: var(--accent-lift); }
+
+.whatsapp-float__icon {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: rgba(4, 19, 11, 0.15);
+}
+
+.whatsapp-float__icon svg { width: 1.2rem; height: 1.2rem; }

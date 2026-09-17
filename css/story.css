@@ -1,0 +1,76 @@
+/* ==========================================================================
+   Story — the club's own timeline, which is the strongest credibility asset
+   on the page: a 2014 initiative, a 2021 registered trademark, a 2024 company.
+   Set as three dated milestones, then the vision and mission as two
+   statements. Light chapter, but it opens on a full-bleed photograph so it
+   does not read as a continuation of the section above it.
+   ========================================================================== */
+
+.story__figure {
+  margin-block: clamp(2.5rem, 1.5rem + 3vw, 4.5rem);
+}
+
+.story__figure img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  object-position: 50% 38%;
+}
+
+/* ---- Milestones ------------------------------------------------------------ */
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 0.8rem + 2.6vw, 3.5rem);
+}
+
+.milestone {
+  padding-top: clamp(1.25rem, 1rem + 1.2vw, 2rem);
+  border-top: 1px solid var(--rule-on-bone);
+}
+
+.milestone__year {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 1.4rem + 3.2vw, 4rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--bone-fg);
+}
+
+.milestone__title {
+  margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.milestone__text {
+  color: var(--bone-fg-soft);
+  font-size: var(--fs-sm);
+  line-height: 1.9;
+}
+
+/* ---- Vision and mission ------------------------------------------------------ */
+
+.creed {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.75rem, 1rem + 3vw, 4.5rem);
+  margin-top: clamp(3rem, 2rem + 3.5vw, 5.5rem);
+  padding-top: clamp(2rem, 1.4rem + 2vw, 3.25rem);
+  border-top: 1px solid var(--rule-on-bone);
+}
+
+.creed__item .label { margin-bottom: var(--space-4); }
+
+.creed__text {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 0.95rem + 1.1vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--bone-fg);
+}

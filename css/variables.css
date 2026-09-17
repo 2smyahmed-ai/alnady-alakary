@@ -1,0 +1,98 @@
+/* ==========================================================================
+   Design tokens — النادي العقاري
+
+   The page runs on two surfaces, not one: INK (deep navy-black, for the
+   photographic chapters) and BONE (warm off-white, for the editorial and
+   trust chapters). Alternating them is what gives the page its rhythm, and
+   it is what lets the partner logos appear in their own brand colours.
+
+   Accent green is rationed deliberately — calls to action and little else.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand, straight off the logo ------------------------------------ */
+  --brand-navy: #153a6f;
+  --brand-green: #37c27f;
+
+  /* ---- Ink surfaces ----------------------------------------------------- */
+  --ink-950: #040a13;  /* footer and the projects chapter */
+  --ink-900: #071220;  /* dark chapters */
+
+  /* ---- Bone surfaces ----------------------------------------------------- */
+  --bone-100: #f5f2ec; /* light chapters */
+
+  /* ---- Type on ink -------------------------------------------------------- */
+  --ink-fg: #f7f5f1;
+  --ink-fg-soft: #a7b4c4;
+  --ink-fg-dim: #66788d;
+
+  /* ---- Type on bone ------------------------------------------------------- */
+  --bone-fg: #0b1622;
+  --bone-fg-soft: #4e5967;
+  --bone-fg-dim: #8b8878;
+
+  /* ---- Accent ------------------------------------------------------------- */
+  --accent: var(--brand-green);
+  --accent-lift: #57d99b;  /* hover on ink */
+  --accent-ink: #0d6b43;   /* passes contrast on bone */
+
+  /* ---- Hairlines ----------------------------------------------------------- */
+  --rule-on-ink: rgba(167, 180, 196, 0.18);
+  --rule-on-ink-soft: rgba(167, 180, 196, 0.1);
+  --rule-on-bone: rgba(11, 22, 34, 0.14);
+  --rule-on-bone-soft: rgba(11, 22, 34, 0.07);
+
+  /* ---- Type ---------------------------------------------------------------
+     Display is Reem Kufi: its geometry is built from the same kufi logic as
+     the club's logo mark. Text is IBM Plex Sans Arabic, which sets long
+     Arabic paragraphs far better than a display face can. */
+  --font-display: "Reem Kufi", "Noto Kufi Arabic", "Segoe UI", system-ui, sans-serif;
+  --font-text: "IBM Plex Sans Arabic", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --fs-hero: clamp(2.9rem, 0.9rem + 8.2vw, 7.25rem);
+  --fs-display: clamp(2.1rem, 1rem + 5vw, 4.5rem);
+  --fs-display-sm: clamp(1.7rem, 1.1rem + 2.6vw, 2.9rem);
+  --fs-h3: clamp(1.2rem, 1.05rem + 0.7vw, 1.6rem);
+  --fs-lead: clamp(1.0625rem, 0.97rem + 0.5vw, 1.3rem);
+  --fs-body: 1.0625rem;
+  --fs-sm: 0.9375rem;
+  --fs-xs: 0.8125rem;
+  --fs-label: 0.75rem;
+
+  --lh-hero: 1.16;
+  --lh-display: 1.22;
+  --lh-body: 1.95;
+
+  /* Arabic letterforms join, so tracking stays at zero everywhere except the
+     small caps labels, where it is slight enough not to break the joins. */
+  --track-label: 0.06em;
+
+  /* ---- Space ---------------------------------------------------------------- */
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 2.5rem;
+  --space-8: 3rem;
+
+  --chapter-y: clamp(5rem, 2.5rem + 7.5vw, 10rem);
+  --gutter: clamp(1.25rem, 0.5rem + 3vw, 4rem);
+  --container: 1320px;
+
+  /* ---- Geometry -------------------------------------------------------------
+     Square by default — the mark is drawn from straight architectural lines,
+     so rounded corners fight it. Buttons take the barest chamfer; only the
+     floating action button is a pill. */
+  --radius-btn: 2px;
+
+  /* ---- Motion ----------------------------------------------------------------- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 180ms;
+  --dur-mid: 360ms;
+  --dur-slow: 780ms;
+
+  /* ---- Layers ------------------------------------------------------------------ */
+  --z-header: 100;
+  --z-drawer: 120;
+  --z-float: 90;
+}

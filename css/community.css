@@ -1,0 +1,82 @@
+/* ==========================================================================
+   Community — the closing statement and the page's primary conversion.
+   Full-bleed photography, centred type, the criteria set as a plain band.
+   ========================================================================== */
+
+.community { text-align: center; }
+
+/* This backdrop is brighter than the services one, so it takes a heavier
+   veil to stay a texture rather than a portrait. */
+.community .chapter__veil {
+  background: linear-gradient(
+    to bottom,
+    rgba(4, 10, 19, 0.96) 0%,
+    rgba(4, 10, 19, 0.93) 45%,
+    rgba(4, 10, 19, 0.97) 100%
+  );
+}
+
+/* No width cap: at display size the client's line sits on one commanding
+   row at every breakpoint, which is the point of a closing statement. */
+.community__head { margin-inline: auto; }
+
+.community .label { justify-content: center; }
+.community .label::before { display: none; }
+
+.community__title {
+  margin-block: var(--space-5) var(--space-6);
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+}
+
+.community__lead {
+  max-width: 58ch;
+  margin-inline: auto;
+  color: var(--ink-fg-soft);
+  font-size: var(--fs-lead);
+  line-height: 1.95;
+}
+
+/* ---- Criteria band ------------------------------------------------------------ */
+
+.criteria {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.25rem, 0.5rem + 2vw, 2.5rem);
+  margin-block: clamp(3rem, 2rem + 3vw, 5rem);
+  text-align: start;
+}
+
+.criteria__item {
+  padding-top: clamp(1rem, 0.7rem + 1vw, 1.5rem);
+  border-top: 1px solid rgba(247, 245, 241, 0.22);
+  color: var(--ink-fg-soft);
+  font-size: var(--fs-sm);
+  line-height: 1.8;
+}
+
+.criteria__item::before {
+  content: "";
+  display: block;
+  width: 7px;
+  height: 7px;
+  margin-bottom: clamp(0.85rem, 0.7rem + 0.5vw, 1.25rem);
+  background-color: var(--accent);
+  rotate: 45deg;
+}
+
+/* ---- Closing action ------------------------------------------------------------ */
+
+.community__cta { display: grid; justify-items: center; gap: var(--space-5); }
+
+.community__cta .btn { gap: 1rem; }
+
+.community__number {
+  padding-inline-start: 1rem;
+  border-inline-start: 1px solid currentColor;
+  font-weight: 700;
+  /* the rule is a divider, not an edge — it should not read as loud as text */
+  border-inline-start-color: color-mix(in srgb, currentColor 35%, transparent);
+}
+
+.community__hint { color: var(--ink-fg-dim); font-size: var(--fs-xs); }

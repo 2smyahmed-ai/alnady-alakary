@@ -1,0 +1,46 @@
+/* ==========================================================================
+   Motion — reveals, the marquee loop, and the reduced-motion contract
+   ========================================================================== */
+
+/* Reveals only arm once the script confirms it can observe them, so a failed
+   script leaves a fully readable page rather than a blank one. */
+.js-reveal [data-reveal] {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition:
+    opacity var(--dur-slow) var(--ease),
+    transform var(--dur-slow) var(--ease);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js-reveal [data-reveal].is-revealed { opacity: 1; transform: none; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  /* RTL: content travels right, so new logos enter from the left */
+  to { transform: translateX(100%); }
+}
+
+@keyframes drawer-item {
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js-reveal [data-reveal] { opacity: 1; transform: none; }
+
+  /* A halted marquee must not clip the logos it was scrolling */
+  .marquee__group { animation: none; }
+  .marquee { overflow-x: auto; scrollbar-width: none; }
+
+  .gallery__viewport { scroll-behavior: auto; }
+  .about__statement { position: static; }
+}

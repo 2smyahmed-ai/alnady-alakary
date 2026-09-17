@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Chapter shell — the rhythm the page alternates on.
+   Every chapter is either `on-bone` or left on ink; none of them carry a box.
+   ========================================================================== */
+
+.chapter {
+  position: relative;
+  padding-block: var(--chapter-y);
+}
+
+.chapter--tight { padding-block: clamp(3.5rem, 2rem + 5vw, 6.5rem); }
+
+/* Full-bleed photographic chapter: image behind, content above. */
+.chapter--photo { isolation: isolate; overflow: hidden; }
+
+.chapter__bg { position: absolute; inset: 0; z-index: -2; }
+
+.chapter__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Backdrops are texture, not subject: pulled down so the type dominates. */
+  filter: grayscale(0.45) contrast(1.05);
+}
+
+.chapter__veil {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  /* A navy wash off the brand mark keeps the dark chapters reading as the
+     club's own colour rather than neutral black. */
+  background:
+    radial-gradient(ellipse 130% 90% at 50% 0%,
+      color-mix(in srgb, var(--brand-navy) 45%, transparent), transparent 72%),
+    linear-gradient(
+      to bottom,
+      rgba(4, 10, 19, 0.95) 0%,
+      rgba(4, 10, 19, 0.89) 45%,
+      rgba(4, 10, 19, 0.97) 100%
+    );
+}
+
+/* ---- Chapter heading ------------------------------------------------------- */
+
+.chapter__head { margin-bottom: clamp(2.5rem, 1.5rem + 3.4vw, 5rem); }
+
+.chapter__title {
+  margin-block: var(--space-5) 0;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+}
+
+.chapter__title--sm { font-size: var(--fs-display-sm); }
+
+.chapter__lead {
+  max-width: 52ch;
+  margin-top: var(--space-5);
+  font-size: var(--fs-lead);
+  line-height: 1.9;
+}
+
+/* Heading opposite a short piece of supporting copy */
+.chapter__head--split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  align-items: end;
+  gap: clamp(1.5rem, 0.8rem + 2.4vw, 4rem);
+}
+
+.chapter__head--split .chapter__lead { margin-top: 0; }

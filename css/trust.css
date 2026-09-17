@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Credits wall — the organisations the club has worked with.
+
+   Bone is the only surface on which seventeen different brand palettes can
+   appear in their own colours without fighting. The logos are split into
+   groups because presenting government bodies under a single "partners"
+   heading would imply a formal relationship the club has not claimed.
+   ========================================================================== */
+
+/* A wall rather than a second carousel: seventeen real credits visible at
+   once is the whole point of the section. */
+
+.wall-group + .wall-group {
+  margin-top: clamp(2.5rem, 1.6rem + 2.8vw, 4rem);
+  padding-top: clamp(2rem, 1.4rem + 2vw, 3rem);
+  border-top: 1px solid var(--rule-on-bone-soft);
+}
+
+.wall-group .label { margin-bottom: clamp(1.5rem, 1rem + 1.6vw, 2.25rem); }
+
+.wall {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  /* Tuned so seventeen logos land as 6 / 6 / 5 rather than 5 / 5 / 5 / 2 */
+  column-gap: clamp(2rem, 1rem + 3.4vw, 4rem);
+  row-gap: clamp(2.25rem, 1.2rem + 3.5vw, 4rem);
+}
+
+/* An identical box per logo, sized on the image itself rather than the cell:
+   a percentage max-height on a stretched flex/grid item has no definite
+   height to resolve against and is ignored. object-fit letterboxes each mark
+   inside the same footprint, which is what makes seventeen very differently
+   proportioned logos read as one wall. */
+.wall li { display: flex; }
+
+.wall img {
+  width: clamp(6.5rem, 4.5rem + 6vw, 9rem);
+  height: clamp(3.25rem, 2.6rem + 2.2vw, 4.5rem);
+  object-fit: contain;
+  transition: transform var(--dur-mid) var(--ease);
+}
+
+.wall li:hover img { transform: translateY(-3px); }

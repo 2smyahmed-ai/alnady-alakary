@@ -1,0 +1,117 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer {
+  padding-block: clamp(3.5rem, 2.4rem + 3.5vw, 6rem) 0;
+  border-top: 1px solid var(--rule-on-ink);
+  background-color: var(--ink-950);
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.85fr 1.05fr 1.2fr;
+  gap: clamp(2rem, 1.2rem + 2.8vw, 4rem);
+  padding-bottom: clamp(2.5rem, 1.8rem + 2.4vw, 4rem);
+}
+
+.footer__col-title {
+  margin-bottom: var(--space-5);
+  color: var(--ink-fg-dim);
+  font-family: var(--font-text);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+}
+
+/* ---- Brand --------------------------------------------------------------- */
+
+.footer__brand { display: block; margin-bottom: var(--space-5); }
+.footer__brand img { height: 5.25rem; width: auto; }
+
+.footer__tagline {
+  max-width: 26ch;
+  margin-bottom: var(--space-7);
+  color: var(--ink-fg-soft);
+  font-size: var(--fs-sm);
+  line-height: 1.9;
+}
+
+/* ---- Links ---------------------------------------------------------------- */
+
+.footer__links { display: grid; gap: 0.7rem; }
+
+.footer__links a {
+  color: var(--ink-fg-soft);
+  font-size: var(--fs-sm);
+}
+
+.footer__links a:hover { color: var(--ink-fg); }
+
+/* ---- Contact: hairline rows, no icon chips -------------------------------- */
+
+.footer__contact { display: grid; }
+
+.footer__contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-block: 0.85rem;
+  border-bottom: 1px solid var(--rule-on-ink-soft);
+  color: var(--ink-fg-soft);
+  font-size: var(--fs-sm);
+}
+
+.footer__contact-item:first-child { border-top: 1px solid var(--rule-on-ink-soft); }
+.footer__contact-item svg { flex: none; color: var(--ink-fg-dim); transition: color var(--dur-fast) var(--ease); }
+.footer__contact-item:hover svg { color: var(--accent); }
+
+.footer__contact-label { display: block; color: var(--ink-fg-dim); font-size: var(--fs-xs); line-height: 1.5; }
+.footer__contact-value { display: block; color: var(--ink-fg); font-weight: 600; line-height: 1.6; }
+
+/* ---- Social ---------------------------------------------------------------- */
+
+.footer__social { display: flex; flex-wrap: wrap; gap: 1.35rem; }
+
+.social-link { color: var(--ink-fg-dim); }
+.social-link:hover { color: var(--accent); }
+.social-link svg { width: 1.15rem; height: 1.15rem; }
+
+/* ---- Map -------------------------------------------------------------------- */
+
+.footer__map { border: 1px solid var(--rule-on-ink); }
+
+.footer__map iframe {
+  display: block;
+  width: 100%;
+  height: 13rem;
+  border: 0;
+  /* Google's default tiles are bright white; this seats them in the page */
+  filter: grayscale(0.6) invert(0.92) hue-rotate(185deg) contrast(0.88) brightness(0.9);
+}
+
+.footer__map-label {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1rem;
+  border-top: 1px solid var(--rule-on-ink);
+  color: var(--ink-fg-dim);
+  font-size: var(--fs-xs);
+}
+
+.footer__map-label svg { flex: none; color: var(--accent); }
+
+/* ---- Bottom bar --------------------------------------------------------------- */
+
+.footer__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-block: var(--space-5);
+  border-top: 1px solid var(--rule-on-ink);
+  color: var(--ink-fg-dim);
+  font-size: var(--fs-xs);
+}

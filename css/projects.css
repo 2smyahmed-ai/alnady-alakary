@@ -1,0 +1,254 @@
+/* ==========================================================================
+   Projects — one dominant feature, then a full-bleed editorial strip.
+   Metadata sits under or over the photographs; nothing is boxed.
+   ========================================================================== */
+
+/* The only place two dark chapters meet, so this one marks its own top edge
+   and sits a little tighter rather than relying on tone alone. */
+.projects {
+  padding-top: clamp(3.5rem, 2rem + 5vw, 7rem);
+  border-top: 1px solid var(--rule-on-ink);
+  background-color: var(--ink-950);
+}
+
+/* ---- Featured ----------------------------------------------------------------
+   Sits outside the container in the markup, so it runs the full width of the
+   viewport. Its caption re-enters a container to keep the alignment axis. */
+
+.feature {
+  position: relative;
+  margin-bottom: clamp(3rem, 2rem + 3.6vw, 6rem);
+  isolation: isolate;
+}
+
+.feature__open { display: none; }
+
+.has-dialog .feature__open {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+  color: var(--ink-fg);
+  font-family: var(--font-text);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+.has-dialog .feature__open::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.has-dialog .feature:hover .feature__open,
+.feature__open:focus-visible { color: var(--accent); }
+
+.feature__img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  object-position: 50% 42%;
+}
+
+.feature::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(4, 10, 19, 0.97) 0%, rgba(4, 10, 19, 0.85) 22%, rgba(4, 10, 19, 0.3) 55%, rgba(4, 10, 19, 0.08) 82%);
+  pointer-events: none;
+}
+
+.feature__body {
+  position: absolute;
+  z-index: 1;
+  inset-inline: 0;
+  inset-block-end: clamp(1.5rem, 0.8rem + 2.6vw, 3.25rem);
+}
+
+.feature__body-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: var(--space-5);
+}
+
+.feature__tag {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  color: var(--accent);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+}
+
+.feature__title {
+  font-size: clamp(1.75rem, 1rem + 3.4vw, 4rem);
+  line-height: 1.22;
+  color: var(--ink-fg);
+}
+
+.feature__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  text-align: end;
+  color: var(--ink-fg-soft);
+  font-size: var(--fs-sm);
+}
+
+.feature__year {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);
+  color: var(--ink-fg);
+  line-height: 1;
+}
+
+/* ---- Strip --------------------------------------------------------------------
+   Runs past the container edge so the row reads as a continuing gallery. */
+
+.gallery__viewport {
+  margin-inline: calc(var(--gutter) * -1);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior-x: contain;
+}
+
+.gallery__viewport::-webkit-scrollbar { display: none; }
+
+/* The inset lives on the track, not the scroll container: a scroll
+   container's inline-start padding collapses at the initial scroll position
+   in RTL, which left the first card flush against the screen edge. */
+.gallery__track {
+  display: flex;
+  align-items: flex-start;
+  padding-inline: var(--gutter);
+  gap: clamp(1rem, 0.5rem + 1.6vw, 2rem);
+  width: max-content;
+}
+
+.project {
+  position: relative;
+  flex: 0 0 clamp(16rem, 27vw, 25rem);
+  scroll-snap-align: start;
+}
+
+/* The detail trigger only appears once dialog.js confirms the browser can
+   open one, so a failed script leaves a static card rather than a button
+   that does nothing. */
+.project__open { display: none; }
+
+.has-dialog .project__open {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+  color: var(--ink-fg-dim);
+  font-family: var(--font-text);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  transition: color var(--dur-fast) var(--ease);
+}
+
+/* Stretched hit area: the whole card opens the dialog, but only one
+   button carries it, so the accessibility tree stays honest. */
+.has-dialog .project__open::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.has-dialog .project:hover .project__open,
+.project__open:focus-visible { color: var(--accent); }
+
+.project__open svg { transition: transform var(--dur-fast) var(--ease); }
+/* RTL: forward travel is to the left */
+.has-dialog .project:hover .project__open svg { transform: translateX(-3px); }
+
+.project__frame { overflow: hidden; }
+
+.project__img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+.project:hover .project__img { transform: scale(1.04); }
+
+.project__body {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid var(--rule-on-ink);
+  transition: border-color var(--dur-mid) var(--ease);
+}
+
+.project:hover .project__body { border-top-color: var(--accent); }
+
+.project__title {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.2rem);
+  font-weight: 600;
+  color: var(--ink-fg);
+  line-height: 1.5;
+}
+
+.project__type {
+  margin-top: 0.2rem;
+  color: var(--ink-fg-dim);
+  font-size: var(--fs-xs);
+}
+
+.project__year { flex: none; color: var(--ink-fg-dim); font-size: var(--fs-xs); }
+
+/* ---- Controls ------------------------------------------------------------------ */
+
+.gallery:not(.is-ready) .gallery__foot { display: none; }
+
+.gallery__foot {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: clamp(1.5rem, 1rem + 1.4vw, 2.25rem);
+}
+
+.gallery__btn {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  flex: none;
+  border: 1px solid var(--rule-on-ink);
+  color: var(--ink-fg);
+  transition: border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease);
+}
+
+.gallery__btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.gallery__btn:disabled { opacity: 0.25; cursor: not-allowed; }
+
+/* A short rail reads as position in a gallery; a full-width one reads as a
+   loading bar and says almost nothing with only a few slides. */
+.gallery__rail {
+  position: relative;
+  flex: none;
+  width: clamp(5rem, 11vw, 9rem);
+  height: 1px;
+  background-color: var(--rule-on-ink);
+}
+
+.gallery__rail span {
+  position: absolute;
+  inset-block: -1px;
+  inset-inline-start: 0;
+  display: block;
+  background-color: var(--accent);
+  transition: width var(--dur-mid) var(--ease), inset-inline-start var(--dur-mid) var(--ease);
+}
