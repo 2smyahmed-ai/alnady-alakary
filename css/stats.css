@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Trust numbers — the first thing under the hero.
+
+   Hairline over each figure rather than a box around it, matching the rule
+   language the process and criteria bands already use.
+   ========================================================================== */
+
+.stats {
+  padding-block: clamp(2.25rem, 1.5rem + 2.6vw, 4rem);
+  border-bottom: 1px solid var(--rule-on-bone-soft);
+}
+
+.stats__since {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: clamp(1.5rem, 1rem + 1.6vw, 2.5rem);
+  color: var(--bone-fg-dim);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+}
+
+.stats__since::before {
+  content: "";
+  width: 1.75rem;
+  height: 1px;
+  background-color: currentColor;
+  opacity: 0.6;
+}
+
+.stats__list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(1.25rem, 0.6rem + 2vw, 2.5rem);
+}
+
+.stat {
+  padding-top: clamp(0.85rem, 0.7rem + 0.6vw, 1.25rem);
+  border-top: 1px solid var(--rule-on-bone);
+}
+
+.stat__num {
+  display: block;
+  color: var(--bone-fg);
+  font-size: clamp(1.75rem, 1.05rem + 2.4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.stat__label {
+  display: block;
+  margin-top: 0.55rem;
+  color: var(--bone-fg-soft);
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+}

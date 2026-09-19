@@ -14,7 +14,17 @@
 
 /* ---- <= 1024px : the asymmetric spreads become single columns ------------- */
 
+/* ---- <= 1100px : five stages stack into a ruled list ---------------------- */
+
+@media (max-width: 1100px) {
+  .process { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .stage { padding-block: clamp(1.25rem, 1rem + 1vw, 1.85rem); }
+  .stage::before { inset-inline: 0; }
+}
+
 @media (max-width: 1024px) {
+  .stats__list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
   .about__grid { grid-template-columns: minmax(0, 1fr); gap: clamp(2.5rem, 6vw, 4rem); }
   .about__statement { position: static; }
 
@@ -67,11 +77,6 @@
     );
   }
 
-  /* The stages stack into a ruled list; each keeps its own marker */
-  .process { grid-template-columns: minmax(0, 1fr); gap: 0; }
-  .stage { padding-block: clamp(1.5rem, 1.2rem + 1vw, 2.25rem) clamp(1.5rem, 1.2rem + 1vw, 2.25rem); }
-  .stage::before { inset-inline: 0; }
-
   .feature__img { aspect-ratio: 4 / 3; }
   .feature__body-inner { grid-template-columns: minmax(0, 1fr); gap: 0.75rem; }
   .feature__meta { text-align: start; flex-direction: row; align-items: baseline; gap: 0.75rem; }
@@ -103,6 +108,8 @@
 }
 
 @media (max-width: 640px) {
+  .stats__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
   .header__actions .btn--primary { display: none; }
 
   .brand__mark { height: 2.5rem; }
@@ -128,12 +135,6 @@
 
   .project { flex-basis: min(74vw, 17rem); }
 
-  /* The label would sit over content at this width */
-  .whatsapp-float { padding: 0.55rem; gap: 0; }
-  .whatsapp-float__label { display: none; }
-  .whatsapp-float__icon { width: 2.65rem; height: 2.65rem; }
-  .whatsapp-float__icon svg { width: 1.45rem; height: 1.45rem; }
-
   .community__cta .btn { flex-wrap: wrap; width: 100%; row-gap: 0.15rem; }
   .community__number { padding-inline-start: 0; border-inline-start: 0; }
 }
@@ -142,6 +143,18 @@
   :root { --fs-body: 1rem; }
   .brand__wordmark { display: none; }
   .project { flex-basis: 80vw; }
+}
+
+/* ---- >= 641px : the floating button steps back ------------------------------
+   The header keeps "اطلب تنظيم فعاليتك" in view on desktop, so a second full
+   label floating over the page is redundant. It becomes a plain icon there,
+   and stays labelled on phones where the header CTA is hidden. */
+
+@media (min-width: 641px) {
+  .whatsapp-float { padding: 0.6rem; gap: 0; }
+  .whatsapp-float__label { display: none; }
+  .whatsapp-float__icon { width: 2.5rem; height: 2.5rem; }
+  .whatsapp-float__icon svg { width: 1.35rem; height: 1.35rem; }
 }
 
 /* ---- Coarse pointer -------------------------------------------------------- */

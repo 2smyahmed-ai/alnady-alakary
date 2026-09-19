@@ -24,11 +24,13 @@ architectural lines, so rounded corners fight it. Hierarchy comes from **scale
 and hairlines**, not from cards: there is not a single bordered box on the
 page. Accent green is rationed to calls to action and a handful of markers.
 
-**Typography** is a display/text pair. Reem Kufi sets every display heading —
-its kufi geometry is built from the same logic as the club's own logo mark, so
-the headings and the mark read as one identity. IBM Plex Sans Arabic sets
-everything at paragraph size. Tracking stays at zero except on the small caps
-labels: Arabic letterforms join, and wide letter-spacing visibly breaks them.
+**Typography** is one family throughout: IBM Plex Sans Arabic. An earlier
+draft paired it with Reem Kufi for display, but the client found the kufi
+headings hard to read at a glance — this is the plain, high-clarity register
+Saudi corporate sites are set in, and hierarchy now comes from weight and size
+rather than a second, more decorative face. Tracking stays at zero except on
+the small caps labels: Arabic letterforms join, and wide letter-spacing
+visibly breaks them.
 
 ## What the page is selling
 
@@ -38,14 +40,19 @@ of the services chapter, every project dialog, and the floating button.
 **شاهد أعمالنا** is the hero's secondary. Joining the community is kept, but
 steps back: it is an outline button in the header and in its own chapter.
 
+The floating WhatsApp button is a bare icon on desktop, where the header
+already keeps the same CTA in view, and only carries its label on phones,
+where the header CTA is hidden.
+
 ## Chapter order
 
 ```
 Hero            ink  · full-bleed brand visual, one very large headline
+Trust numbers   bone · five cumulative figures since 2014
 Credits strip   bone · client logos in colour, marqueeing
 About           bone · the club's description opposite its five values
 Story           bone · 2014 / 2021 / 2024 timeline, then vision and mission
-Services        ink  · four stages on one continuous rule + the primary ask
+Services        ink  · five stages on one continuous rule + the primary ask
 Projects        ink  · one full-bleed feature, then a gallery strip; every
                        project opens a detail dialog
 Clients         bone · the logo wall, split into two groups
@@ -65,11 +72,12 @@ css/
   buttons.css              Button family + the floating WhatsApp button.
   header.css               Sticky header, desktop nav, mobile drawer.
   hero.css                 Hero + the client credits strip beneath it.
+  stats.css                The trust-numbers band under the hero.
   sections.css             Chapter shell: padding rhythm, headings, photographic
                            backdrops and their veils.
   about.css                The statement spread and the numbered value index.
   story.css                Timeline milestones, vision and mission.
-  services.css             The four-stage process line and its call to action.
+  services.css             The five-stage process line and its call to action.
   projects.css             Featured project, gallery strip, detail triggers.
   dialog.css               The project detail dialog.
   trust.css                The client logo wall.
@@ -146,6 +154,34 @@ that blocks first paint.
   presented under one "شركاؤنا" heading that implied a formal partnership.
 - **Projects are now clickable**, each opening a detail dialog.
 
+## The round after that
+
+- **Font** — Reem Kufi out, IBM Plex Sans Arabic throughout, for legibility.
+- **Fifth service** — «صناعة الفرص والشراكات», so the page reads as a broker of
+  opportunity rather than only an events organiser. The process line now runs
+  to five stages and stacks below 1100px instead of 900px.
+- **Top nav cut to six** — قصتنا folds under من نحن and عملاؤنا under أعمالنا.
+  Both chapters are still there and still sit directly after the section that
+  now owns them; only the nav entries were removed.
+- **Trust numbers** — a band directly under the hero carrying the five
+  cumulative totals the client supplied (20+ MOUs, 20+ events, 800+ members,
+  2,000+ beneficiaries, 100K+ social reach), all since 2014. Note these are
+  cumulative, not the half-year figures on the client's H1-2026 infographic.
+- **«عشر سنوات» → «أكثر من عقد»** in the story lead — it does not expire.
+- **Page length** — chapter rhythm, the story figure and the featured project
+  margins were all tightened. Desktop height dropped from ~9,840px to ~9,690px
+  at 1440, and considerably more of that is now content rather than gap.
+- **Map** — pinned to حي المزروعية, Dammam.
+- **SEO** — `rel="canonical"`, absolute `og:image` with dimensions, `og:url`,
+  `twitter:card`, and a JSON-LD `@graph`: `ProfessionalService` (address,
+  phone, email, founding date, social profiles, a five-item `OfferCatalog`),
+  `WebSite`, and an `ItemList` of the five projects, each with its own
+  description, image, year and client.
+
+  **The structured data hard-codes `https://realclub.sa`.** If production sits
+  on another domain, update the URLs in the `<script type="application/ld+json">`
+  block, the canonical link and the `og:` tags together.
+
 ## Still open
 
 1. **Remaining project dates and names** — Seredo (2026), Dar Al-Talal (2025)
@@ -155,10 +191,15 @@ that blocks first paint.
    project list itself evidences. Confirm the rest, and say which belong in a
    third شركاء النجاح group.
 3. **Testimonials** — three documented quotes to bring the section back.
-4. **Per-project scope and outcome** — see "Adding project detail content".
+4. **Per-project scope** — the نطاق عمل النادي list in each dialog was derived
+   from what the photographs document plus the published service list. It needs
+   a sign-off. The outcome field (النتيجة والأثر) is still empty — see "Adding
+   project detail content".
 5. **Business Hub photography** — none supplied; the card uses another real
    event photo and is flagged in the markup.
-6. **Google Maps pin** — the footer map is centred on the Eastern Province.
+6. **Google Maps pin** — the footer map is pinned to the حي المزروعية
+   neighbourhood. Send the exact Google Maps share link to drop the marker on
+   the building itself.
 7. **YouTube and LinkedIn handles** — assumed `realclubsa`, unconfirmed.
 8. **One logo's name** — the gold monogram has no legible name on the supplied
    sheet, so its `alt` text stays generic.

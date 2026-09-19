@@ -5,10 +5,10 @@
    ========================================================================== */
 
 .process {
-  --process-gap: clamp(1.25rem, 0.5rem + 2.4vw, 3rem);
+  --process-gap: clamp(1rem, 0.4rem + 1.8vw, 2.25rem);
 
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: var(--process-gap);
 }
 

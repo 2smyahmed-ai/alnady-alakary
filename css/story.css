@@ -7,7 +7,7 @@
    ========================================================================== */
 
 .story__figure {
-  margin-block: clamp(2.5rem, 1.5rem + 3vw, 4.5rem);
+  margin-block: clamp(1.75rem, 1.2rem + 1.8vw, 3rem);
 }
 
 .story__figure img {
@@ -60,8 +60,8 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(1.75rem, 1rem + 3vw, 4.5rem);
-  margin-top: clamp(3rem, 2rem + 3.5vw, 5.5rem);
-  padding-top: clamp(2rem, 1.4rem + 2vw, 3.25rem);
+  margin-top: clamp(2.25rem, 1.5rem + 2.4vw, 3.75rem);
+  padding-top: clamp(1.5rem, 1.1rem + 1.6vw, 2.5rem);
   border-top: 1px solid var(--rule-on-bone);
 }
 

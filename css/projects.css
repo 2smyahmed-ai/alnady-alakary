@@ -6,7 +6,7 @@
 /* The only place two dark chapters meet, so this one marks its own top edge
    and sits a little tighter rather than relying on tone alone. */
 .projects {
-  padding-top: clamp(3.5rem, 2rem + 5vw, 7rem);
+  padding-top: clamp(3rem, 1.8rem + 4vw, 5.5rem);
   border-top: 1px solid var(--rule-on-ink);
   background-color: var(--ink-950);
 }
@@ -17,7 +17,7 @@
 
 .feature {
   position: relative;
-  margin-bottom: clamp(3rem, 2rem + 3.6vw, 6rem);
+  margin-bottom: clamp(2.25rem, 1.5rem + 2.4vw, 4rem);
   isolation: isolate;
 }
 

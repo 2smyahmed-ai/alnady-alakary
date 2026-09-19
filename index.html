@@ -11,8 +11,13 @@
   <meta property="og:locale" content="ar_SA">
   <meta property="og:title" content="النادي العقاري | تنظيم الفعاليات العقارية">
   <meta property="og:description" content="نصنع فعاليات عقارية تترك أثراً.. نبني الفرص ونصنع الشراكات.">
-  <meta property="og:image" content="assets/images/hero-bg.jpg">
+  <meta property="og:image" content="https://realclub.sa/assets/images/hero-bg.jpg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1536">
+  <meta property="og:url" content="https://realclub.sa/">
+  <meta name="twitter:card" content="summary_large_image">
 
+  <link rel="canonical" href="https://realclub.sa/">
   <link rel="icon" href="assets/logos/favicon.png" sizes="any">
   <link rel="apple-touch-icon" href="assets/logos/apple-touch-icon.png">
 
@@ -23,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="assets/images/hero-bg.jpg">
-  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
@@ -31,6 +36,7 @@
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/stats.css">
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/story.css">
   <link rel="stylesheet" href="css/services.css">
@@ -41,6 +47,242 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Structured data. Update SITE in the URLs below if the production
+       domain is not realclub.sa. -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://realclub.sa/#organization",
+          "name": "النادي العقاري",
+          "alternateName": "The Real Estate Club",
+          "url": "https://realclub.sa/",
+          "logo": "https://realclub.sa/assets/logos/realclub-logo-stacked.png",
+          "image": "https://realclub.sa/assets/images/hero-bg.jpg",
+          "description": "النادي العقاري — منصة احترافية متخصصة في تنظيم الفعاليات العقارية وبناء العلاقات وتوليد الفرص والشراكات بين المطورين والمستثمرين وفق رؤية 2030.",
+          "slogan": "مجتمع عقاري مؤثر",
+          "foundingDate": "2014",
+          "email": "info@realclub.sa",
+          "telephone": "+966566009911",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "حي المزروعية",
+            "addressLocality": "الدمام",
+            "addressRegion": "المنطقة الشرقية",
+            "addressCountry": "SA"
+          },
+          "areaServed": {
+            "@type": "Country",
+            "name": "المملكة العربية السعودية"
+          },
+          "knowsAbout": [
+            "تنظيم الفعاليات العقارية",
+            "حفلات افتتاح المشاريع العقارية",
+            "المعارض والملتقيات العقارية",
+            "الشراكات العقارية"
+          ],
+          "sameAs": [
+            "https://www.instagram.com/realclubsa",
+            "https://x.com/realclubsa",
+            "https://www.tiktok.com/@realclubsa",
+            "https://www.youtube.com/@realclubsa",
+            "https://www.linkedin.com/company/realclubsa"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "خدمات النادي العقاري",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "تجهيز احترافي",
+                  "description": "تخطيط وتجهيز موقع الفعالية بأحدث التقنيات السمعية والبصرية المتوافقة مع هوية مشروعك.",
+                  "provider": {
+                    "@id": "https://realclub.sa/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "توثيق وإعلام",
+                  "description": "تصوير عقاري احترافي (فيديو، فوتوغرافي، درون)، وإدارة حملات إعلامية وتغطيات عبر المؤثرين.",
+                  "provider": {
+                    "@id": "https://realclub.sa/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "علاقات عامة",
+                  "description": "إعداد وتوجيه الدعوات لجمهورك المستهدف من مستثمرين وإعلاميين لضمان الحضور النوعي.",
+                  "provider": {
+                    "@id": "https://realclub.sa/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "ضيافة وإشراف",
+                  "description": "توفير ضيافة راقية، وإعداد وإدارة فقرات الحفل بالكامل لضمان خروج الحدث بأبهى صورة.",
+                  "provider": {
+                    "@id": "https://realclub.sa/#organization"
+                  }
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "صناعة الفرص والشراكات",
+                  "description": "نربط المطورين والمستثمرين وصنّاع القرار، ونحوّل الفعالية إلى منصة لبناء العلاقات وتوليد الفرص والشراكات النوعية.",
+                  "provider": {
+                    "@id": "https://realclub.sa/#organization"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://realclub.sa/#website",
+          "url": "https://realclub.sa/",
+          "name": "النادي العقاري",
+          "inLanguage": "ar-SA",
+          "publisher": {
+            "@id": "https://realclub.sa/#organization"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "@id": "https://realclub.sa/#projects",
+          "name": "أعمال النادي العقاري",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "حفل إطلاق مشروع دار السعد",
+                "description": "حفل الإطلاق الرسمي لمشروع دار السعد، نظّمه النادي العقاري وأدار فقراته بحضور المطوّر وشركائه.",
+                "image": "https://realclub.sa/assets/images/project-featured.jpg",
+                "dateCreated": "2025",
+                "locationCreated": {
+                  "@type": "Place",
+                  "name": "المنطقة الشرقية"
+                },
+                "creator": {
+                  "@id": "https://realclub.sa/#organization"
+                },
+                "sponsor": {
+                  "@type": "Organization",
+                  "name": "منازل الشعلة العقارية"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "معرض سيريدو — الدمام",
+                "description": "معرض ومؤتمر عقاري جمع مطوّرين وجهات تمويلية وشركاء من القطاع، تولّى النادي العقاري تنظيمه وإدارة فقراته والتكريم الختامي.",
+                "image": "https://realclub.sa/assets/images/project-seredo.jpg",
+                "dateCreated": "2026",
+                "locationCreated": {
+                  "@type": "Place",
+                  "name": "الدمام"
+                },
+                "creator": {
+                  "@id": "https://realclub.sa/#organization"
+                },
+                "sponsor": {
+                  "@type": "Organization",
+                  "name": "سيريدو إكسبو"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "مشروع دار التلال — الظهران",
+                "description": "حفل افتتاح مشروع سكني مع دار الإعمار، تضمّن عرضاً ضوئياً على واجهة المشروع.",
+                "image": "https://realclub.sa/assets/images/project-dar-altilal.jpg",
+                "dateCreated": "2025",
+                "locationCreated": {
+                  "@type": "Place",
+                  "name": "الظهران"
+                },
+                "creator": {
+                  "@id": "https://realclub.sa/#organization"
+                },
+                "sponsor": {
+                  "@type": "Organization",
+                  "name": "دار الإعمار"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "سكون كمباوند — الخبر",
+                "description": "حفل افتتاح كمباوند سكني تضمّن عروض ليزر وإضاءة على واجهة المشروع.",
+                "image": "https://realclub.sa/assets/images/project-sukoon.jpg",
+                "dateCreated": "2026",
+                "locationCreated": {
+                  "@type": "Place",
+                  "name": "الخبر"
+                },
+                "creator": {
+                  "@id": "https://realclub.sa/#organization"
+                },
+                "sponsor": {
+                  "@type": "Organization",
+                  "name": "سكون العقارية"
+                }
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": {
+                "@type": "CreativeWork",
+                "name": "مركز أعمال بزنس هب — الدمام",
+                "description": "حفل افتتاح مركز أعمال، تولّى النادي العقاري تنظيمه وتوجيه الدعوات لجمهور الحدث.",
+                "image": "https://realclub.sa/assets/images/project-prince-hub.jpg",
+                "dateCreated": "2026",
+                "locationCreated": {
+                  "@type": "Place",
+                  "name": "الدمام"
+                },
+                "creator": {
+                  "@id": "https://realclub.sa/#organization"
+                },
+                "sponsor": {
+                  "@type": "Organization",
+                  "name": "بزنس هب من فهدان"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 
 <body>
@@ -81,10 +323,8 @@
         <ul class="nav__list">
           <li><a class="nav__link" href="#home">الرئيسية</a></li>
           <li><a class="nav__link" href="#about">من نحن</a></li>
-          <li><a class="nav__link" href="#story">قصتنا</a></li>
           <li><a class="nav__link" href="#services">خدماتنا</a></li>
           <li><a class="nav__link" href="#work">أعمالنا</a></li>
-          <li><a class="nav__link" href="#clients">عملاؤنا</a></li>
           <li><a class="nav__link" href="#community">المجتمع</a></li>
           <li><a class="nav__link" href="#contact">تواصل معنا</a></li>
         </ul>
@@ -124,12 +364,10 @@
         <ul class="drawer__list">
           <li><a class="drawer__link" href="#home" style="--i:0">الرئيسية</a></li>
           <li><a class="drawer__link" href="#about" style="--i:1">من نحن</a></li>
-          <li><a class="drawer__link" href="#story" style="--i:2">قصتنا</a></li>
-          <li><a class="drawer__link" href="#services" style="--i:3">خدماتنا</a></li>
-          <li><a class="drawer__link" href="#work" style="--i:4">أعمالنا</a></li>
-          <li><a class="drawer__link" href="#clients" style="--i:5">عملاؤنا</a></li>
-          <li><a class="drawer__link" href="#community" style="--i:6">المجتمع</a></li>
-          <li><a class="drawer__link" href="#contact" style="--i:7">تواصل معنا</a></li>
+          <li><a class="drawer__link" href="#services" style="--i:2">خدماتنا</a></li>
+          <li><a class="drawer__link" href="#work" style="--i:3">أعمالنا</a></li>
+          <li><a class="drawer__link" href="#community" style="--i:4">المجتمع</a></li>
+          <li><a class="drawer__link" href="#contact" style="--i:5">تواصل معنا</a></li>
         </ul>
       </nav>
 
@@ -187,6 +425,38 @@
             <a class="btn btn--line btn--lg" href="#work">شاهد أعمالنا</a>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Trust numbers — figures supplied by the client; every one of them is
+         a cumulative total since 2014, not a half-year figure.
+         ======================================================================== -->
+    <section class="stats on-bone" aria-label="أرقام النادي العقاري">
+      <div class="container">
+        <p class="stats__since">منذ عام <span class="ltr">2014</span></p>
+        <ul class="stats__list">
+          <li class="stat">
+            <span class="stat__num ltr">+20</span>
+            <span class="stat__label">مذكرة تفاهم واتفاقية تعاون</span>
+          </li>
+          <li class="stat">
+            <span class="stat__num ltr">+20</span>
+            <span class="stat__label">افتتاح وملتقى تم تنظيمه</span>
+          </li>
+          <li class="stat">
+            <span class="stat__num ltr">+800</span>
+            <span class="stat__label">متخصص ضمن مجتمع النادي العقاري</span>
+          </li>
+          <li class="stat">
+            <span class="stat__num ltr">+2000</span>
+            <span class="stat__label">مستفيد من البرامج والفعاليات</span>
+          </li>
+          <li class="stat">
+            <span class="stat__num ltr">+100K</span>
+            <span class="stat__label">ظهور عبر منصات التواصل الاجتماعي</span>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -293,7 +563,7 @@
             <h2 class="chapter__title">من مبادرة عقارية إلى علامة تجارية مسجّلة</h2>
           </div>
           <p class="chapter__lead">
-            عشر سنوات من العمل داخل القطاع العقاري السعودي، من لقاءات غير رسمية إلى شركة
+            أكثر من عقد من العمل داخل القطاع العقاري السعودي، من لقاءات غير رسمية إلى شركة
             متخصصة في تنظيم الفعاليات.
           </p>
         </div>
@@ -391,6 +661,11 @@
             <span class="stage__num" aria-hidden="true">04</span>
             <h3 class="stage__title">ضيافة وإشراف</h3>
             <p class="stage__text">توفير ضيافة راقية، وإعداد وإدارة فقرات الحفل بالكامل لضمان خروج الحدث بأبهى صورة.</p>
+          </li>
+          <li class="stage">
+            <span class="stage__num" aria-hidden="true">05</span>
+            <h3 class="stage__title">صناعة الفرص والشراكات</h3>
+            <p class="stage__text">نربط المطورين والمستثمرين وصنّاع القرار، ونحوّل الفعالية إلى منصة لبناء العلاقات وتوليد الفرص والشراكات النوعية.</p>
           </li>
         </ol>
 
@@ -825,10 +1100,8 @@
           <ul class="footer__links">
             <li><a href="#home">الرئيسية</a></li>
             <li><a href="#about">من نحن</a></li>
-            <li><a href="#story">قصتنا</a></li>
             <li><a href="#services">خدماتنا</a></li>
             <li><a href="#work">أعمالنا</a></li>
-            <li><a href="#clients">عملاؤنا</a></li>
             <li><a href="#community">المجتمع</a></li>
           </ul>
         </nav>
@@ -864,16 +1137,17 @@
 
         <div>
           <h2 class="footer__col-title">موقعنا</h2>
-          <!-- Centred on the Eastern Province until the client sends the exact
-               Google Maps pin; replace the src query with their share link. -->
+          <!-- Neighbourhood-level pin (حي المزروعية, Dammam). Swap the src
+               query for the client's exact Google Maps share link when it
+               arrives, to drop the marker on the building itself. -->
           <div class="footer__map">
             <iframe
-              src="https://www.google.com/maps?q=%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D9%85%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D9%82%D8%A9%20%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%D8%A9&output=embed"
+              src="https://www.google.com/maps?q=%D8%AD%D9%8A%20%D8%A7%D9%84%D9%85%D8%B2%D8%B1%D9%88%D8%B9%D9%8A%D8%A9%20%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D9%85%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D9%82%D8%A9%20%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%D8%A9&output=embed"
               title="موقع النادي العقاري على الخريطة"
               loading="lazy"></iframe>
             <p class="footer__map-label">
               <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-pin"/></svg>
-              الدمام — المنطقة الشرقية، المملكة العربية السعودية
+              حي المزروعية — الدمام، المملكة العربية السعودية
             </p>
           </div>
         </div>
