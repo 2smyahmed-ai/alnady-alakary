@@ -23,8 +23,6 @@
 }
 
 @media (max-width: 1024px) {
-  .stats__list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-
   .about__grid { grid-template-columns: minmax(0, 1fr); gap: clamp(2.5rem, 6vw, 4rem); }
   .about__statement { position: static; }
 
@@ -108,8 +106,6 @@
 }
 
 @media (max-width: 640px) {
-  .stats__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
   .header__actions .btn--primary { display: none; }
 
   .brand__mark { height: 2.5rem; }
@@ -125,10 +121,24 @@
 
   .criteria { grid-template-columns: minmax(0, 1fr); }
 
-  /* Three per row rather than two: seventeen logos in a two-wide column
-     turns the wall into a list. */
-  .wall { column-gap: 1.5rem; row-gap: 2rem; }
-  .wall img { width: 6.25rem; height: 2.6rem; }
+  /* Seventeen logos two-abreast turns the wall into a nine-row list. Three
+     per row with tight gutters roughly halves the height while keeping each
+     mark big enough to recognise. Ragged final rows centre rather than hang. */
+  .wall {
+    column-gap: 0.85rem;
+    row-gap: 1.25rem;
+    justify-content: center;
+  }
+
+  .wall img {
+    width: clamp(3.6rem, 24vw, 6rem);
+    height: 2.35rem;
+  }
+
+  .wall-group + .wall-group {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
 
   .footer__grid { grid-template-columns: minmax(0, 1fr); }
   .footer__bar { justify-content: flex-start; }
