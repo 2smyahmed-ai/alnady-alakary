@@ -43,6 +43,31 @@
   .criteria { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
+/* ---- <= 860px : the timeline stacks ----------------------------------------
+   Three milestones across a phone leaves each column about a hundred pixels
+   wide, which wraps the copy to one word a line and makes the chapter taller
+   than it would be stacked. Year and copy sit side by side instead. */
+
+@media (max-width: 860px) {
+  .timeline { grid-template-columns: minmax(0, 1fr); gap: 0; }
+
+  .milestone {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: baseline;
+    column-gap: clamp(1rem, 4vw, 1.75rem);
+    padding-block: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  }
+
+  .milestone__year {
+    grid-row: span 2;
+    margin-bottom: 0;
+    font-size: clamp(1.6rem, 1.15rem + 1.8vw, 2.4rem);
+  }
+
+  .creed { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+}
+
 /* ---- <= 900px : the process turns vertical -------------------------------- */
 
 @media (max-width: 900px) {

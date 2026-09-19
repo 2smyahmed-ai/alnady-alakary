@@ -70,10 +70,11 @@
           "telephone": "+966566009911",
           "address": {
             "@type": "PostalAddress",
-            "streetAddress": "حي المزروعية",
+            "streetAddress": "شارع الملك سعود بن عبدالعزيز، حي المزروعية",
             "addressLocality": "الدمام",
             "addressRegion": "المنطقة الشرقية",
-            "addressCountry": "SA"
+            "addressCountry": "SA",
+            "postalCode": "31442"
           },
           "areaServed": {
             "@type": "Country",
@@ -152,7 +153,13 @@
                 }
               }
             ]
-          }
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 26.440966,
+            "longitude": 50.123291
+          },
+          "hasMap": "https://maps.app.goo.gl/Nc1tHweVX7HkSZGW7"
         },
         {
           "@type": "WebSite",
@@ -1134,17 +1141,18 @@
 
         <div>
           <h2 class="footer__col-title">موقعنا</h2>
-          <!-- Neighbourhood-level pin (حي المزروعية, Dammam). Swap the src
-               query for the client's exact Google Maps share link when it
-               arrives, to drop the marker on the building itself. -->
+          <!-- Exact pin, 26.440966 / 50.123291 — the coordinates behind the
+               client's Google Maps share link. The label below and the geo
+               block in the structured data both describe this same point. -->
           <div class="footer__map">
             <iframe
-              src="https://www.google.com/maps?q=%D8%AD%D9%8A%20%D8%A7%D9%84%D9%85%D8%B2%D8%B1%D9%88%D8%B9%D9%8A%D8%A9%20%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D9%85%20%D8%A7%D9%84%D9%85%D9%86%D8%B7%D9%82%D8%A9%20%D8%A7%D9%84%D8%B4%D8%B1%D9%82%D9%8A%D8%A9&output=embed"
+              src="https://www.google.com/maps?q=26.440966,50.123291&z=17&hl=ar&output=embed"
               title="موقع النادي العقاري على الخريطة"
               loading="lazy"></iframe>
             <p class="footer__map-label">
               <svg width="15" height="15" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-pin"/></svg>
-              حي المزروعية — الدمام، المملكة العربية السعودية
+              <span>شارع الملك سعود بن عبدالعزيز، حي المزروعية — الدمام</span>
+              <a class="footer__map-link" href="https://maps.app.goo.gl/Nc1tHweVX7HkSZGW7" target="_blank" rel="noopener">الاتجاهات</a>
             </p>
           </div>
         </div>
