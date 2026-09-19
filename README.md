@@ -164,9 +164,10 @@ that blocks first paint.
   Both chapters are still there and still sit directly after the section that
   now owns them; only the nav entries were removed.
 - **Trust numbers** — a band directly under the hero carrying the five
-  cumulative totals the client supplied (20+ MOUs, 20+ events, 800+ members,
-  2,000+ beneficiaries, 100K+ social reach), all since 2014. Note these are
-  cumulative, not the half-year figures on the client's H1-2026 infographic.
+  cumulative totals the client supplied and confirmed (20+ MOUs, 20+ events,
+  800+ members, 2,000+ beneficiaries, 100K+ social reach), all since 2014.
+  These are deliberately the cumulative figures, not the half-year ones on the
+  client's H1-2026 infographic.
 - **«عشر سنوات» → «أكثر من عقد»** in the story lead — it does not expire.
 - **Page length** — chapter rhythm, the story figure and the featured project
   margins were all tightened. Desktop height dropped from ~9,840px to ~9,690px
@@ -178,28 +179,29 @@ that blocks first paint.
   `WebSite`, and an `ItemList` of the five projects, each with its own
   description, image, year and client.
 
-  **The structured data hard-codes `https://realclub.sa`.** If production sits
-  on another domain, update the URLs in the `<script type="application/ld+json">`
+  The canonical domain is **`realclub.sa`**, confirmed by the client. If it
+  ever changes, update the URLs in the `<script type="application/ld+json">`
   block, the canonical link and the `og:` tags together.
 
 ## Still open
 
-1. **Remaining project dates and names** — Seredo (2026), Dar Al-Talal (2025)
-   and Dar Al-Saad (2025) are still unconfirmed. Verify before launch; there is
-   a comment on the projects section in `index.html`.
-2. **The client/worked-with split** — the five in عملاؤنا are the ones the
-   project list itself evidences. Confirm the rest, and say which belong in a
-   third شركاء النجاح group.
-3. **Testimonials** — three documented quotes to bring the section back.
-4. **Per-project scope** — the نطاق عمل النادي list in each dialog was derived
-   from what the photographs document plus the published service list. It needs
-   a sign-off. The outcome field (النتيجة والأثر) is still empty — see "Adding
-   project detail content".
-5. **Business Hub photography** — none supplied; the card uses another real
+Project names, dates, the trust figures and the `realclub.sa` domain are all
+confirmed. What remains needs assets or data the client has not sent yet:
+
+1. **Testimonials** — three documented quotes (name, role, company, text) to
+   bring the section back. It is currently removed rather than showing a
+   placeholder.
+2. **Per-project outcome** — the نطاق عمل النادي list is in place; the
+   النتيجة والأثر field is still empty. See "Adding project detail content".
+3. **Business Hub photography** — none supplied; the card uses another real
    event photo and is flagged in the markup.
-6. **Google Maps pin** — the footer map is pinned to the حي المزروعية
-   neighbourhood. Send the exact Google Maps share link to drop the marker on
-   the building itself.
-7. **YouTube and LinkedIn handles** — assumed `realclubsa`, unconfirmed.
-8. **One logo's name** — the gold monogram has no legible name on the supplied
+4. **Google Maps pin** — pinned to the حي المزروعية neighbourhood. An exact
+   share link would drop the marker on the building itself.
+5. **YouTube and LinkedIn handles** — assumed `realclubsa`, unconfirmed.
+6. **One logo's name** — the gold monogram has no legible name on the supplied
    sheet, so its `alt` text stays generic.
+
+Still worth a decision: **page length**. The last round trimmed roughly 150px
+at 1440, which is marginal — most of the height is content, not gap. Merging
+the story chapter into About, or dropping the full-bleed story photograph,
+would each save several hundred pixels.
