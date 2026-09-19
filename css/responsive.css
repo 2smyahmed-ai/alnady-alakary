@@ -165,8 +165,30 @@
     padding-top: 1.5rem;
   }
 
-  .footer__grid { grid-template-columns: minmax(0, 1fr); }
-  .footer__bar { justify-content: flex-start; }
+  /* One column per block made the footer 1,400px tall on a phone — two and a
+     half times its desktop height. The brand and the map keep the full width;
+     the two short lists sit side by side between them. */
+  .footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 1.25rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer__grid > :first-child,
+  .footer__grid > :last-child { grid-column: 1 / -1; }
+
+  .footer__brand img { height: 3.75rem; }
+  .footer__tagline { margin-bottom: 1.5rem; }
+  .footer__col-title { margin-bottom: 1rem; }
+  .footer__links { gap: 0.5rem; }
+  .footer__contact-item { padding-block: 0.65rem; gap: 0.65rem; }
+  .footer__map iframe { height: 10rem; }
+
+  .footer__bar {
+    justify-content: flex-start;
+    gap: 0.35rem;
+    padding-block: 1.25rem;
+  }
 
   .project { flex-basis: min(74vw, 17rem); }
 
