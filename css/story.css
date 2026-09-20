@@ -74,3 +74,40 @@
   line-height: 1.65;
   color: var(--bone-fg);
 }
+
+/* ---- Values --------------------------------------------------------------
+   Sits with the vision and mission rather than in the About spread: the three
+   belong together, and the About column now answers "why the club" instead.
+   Same ruled language as the milestones above it. */
+
+.values-band {
+  margin-top: clamp(2.25rem, 1.5rem + 2.4vw, 3.5rem);
+  padding-top: clamp(1.5rem, 1.1rem + 1.6vw, 2.5rem);
+  border-top: 1px solid var(--rule-on-bone);
+}
+
+.values-band .label { margin-bottom: clamp(1.25rem, 1rem + 1.2vw, 2rem); }
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(1rem, 0.5rem + 1.6vw, 2rem);
+}
+
+.value-cell {
+  padding-top: clamp(0.85rem, 0.7rem + 0.6vw, 1.25rem);
+  border-top: 1px solid var(--rule-on-bone);
+}
+
+.value-cell__title {
+  margin-bottom: 0.45rem;
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.value-cell__text {
+  color: var(--bone-fg-soft);
+  font-size: var(--fs-sm);
+  line-height: 1.8;
+}

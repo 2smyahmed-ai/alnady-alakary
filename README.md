@@ -50,8 +50,8 @@ where the header CTA is hidden.
 Hero            ink  · full-bleed brand visual, one very large headline
 Trust numbers   bone · five cumulative figures since 2014
 Credits strip   bone · client logos in colour, marqueeing
-About           bone · the club's description opposite its five values
-Story           bone · 2014 / 2021 / 2024 timeline, then vision and mission
+About           bone · the club's description opposite six why-us points
+Story           bone · 2014 / 2021 / 2024 timeline, then vision, mission, values
 Services        ink  · five stages on one continuous rule + the primary ask
 Projects        ink  · one full-bleed feature, then a gallery strip; every
                        project opens a detail dialog
@@ -75,8 +75,8 @@ css/
   stats.css                The trust-numbers band under the hero.
   sections.css             Chapter shell: padding rhythm, headings, photographic
                            backdrops and their veils.
-  about.css                The statement spread and the numbered value index.
-  story.css                Timeline milestones, vision and mission.
+  about.css                The statement spread and the numbered why-us index.
+  story.css                Timeline milestones, vision, mission and values.
   services.css             The five-stage process line and its call to action.
   projects.css             Featured project, gallery strip, detail triggers.
   dialog.css               The project detail dialog.
@@ -182,6 +182,19 @@ that blocks first paint.
   The canonical domain is **`realclub.sa`**, confirmed by the client. If it
   ever changes, update the URLs in the `<script type="application/ld+json">`
   block, the canonical link and the `og:` tags together.
+
+## Final round
+
+- **«لماذا النادي العقاري؟»** is now answered directly beneath its own heading
+  by the client's six points: تخصص، خبرة، تسويق وانتشار، ظهور إعلامي، علاقات،
+  فرص. They are claims, not values, so they carry no body copy.
+- **The five قيم moved** into the story chapter, where they join الرؤية and
+  الرسالة. Vision, mission and values are one triad and read better together
+  than split across two chapters.
+- **The stats band leads on «أكثر من عقد من العمل داخل القطاع العقاري»**
+  instead of «منذ عام 2014», at the client's request. 2014 survives only where
+  it is a fact rather than a claim: the timeline milestone and `foundingDate`
+  in the structured data.
 
 ## Still open
 

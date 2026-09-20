@@ -66,6 +66,16 @@
   }
 
   .creed { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; }
+
+  .values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1rem, 3vw, 1.75rem);
+  }
+}
+
+@media (max-width: 560px) {
+  .values-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .value-cell { padding-block: 1rem; }
 }
 
 /* ---- <= 900px : the process turns vertical -------------------------------- */

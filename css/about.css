@@ -47,9 +47,9 @@
   border: 6px solid var(--bone-100);
 }
 
-/* ---- Value index --------------------------------------------------------------
-   The client's five values, numbered. The numerals carry the hierarchy, which
-   is why there are no icons here. */
+/* ---- Why-us index -------------------------------------------------------------
+   Six short claims, numbered. The numerals carry the hierarchy, which is why
+   there are no icons here, and the rows have no body copy to space around. */
 
 .values__label { margin-bottom: clamp(1.25rem, 1rem + 1vw, 1.75rem); }
 
@@ -60,7 +60,7 @@
   grid-template-columns: auto minmax(0, 1fr);
   align-items: baseline;
   gap: clamp(1rem, 0.5rem + 1.6vw, 2.25rem);
-  padding-block: clamp(1.5rem, 1rem + 1.4vw, 2.25rem);
+  padding-block: clamp(1.1rem, 0.85rem + 1vw, 1.65rem);
   border-top: 1px solid var(--rule-on-bone);
 }
 
@@ -81,16 +81,9 @@
 .value:hover::before { opacity: 1; color: var(--accent-ink); }
 
 .value__title {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0;
   font-family: var(--font-display);
   font-size: var(--fs-h3);
   font-weight: 600;
   line-height: 1.45;
-}
-
-.value__text {
-  max-width: 46ch;
-  color: var(--bone-fg-soft);
-  font-size: var(--fs-sm);
-  line-height: 1.85;
 }
