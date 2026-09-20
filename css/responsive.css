@@ -23,8 +23,7 @@
 }
 
 @media (max-width: 1024px) {
-  .about__grid { grid-template-columns: minmax(0, 1fr); gap: clamp(2.5rem, 6vw, 4rem); }
-  .about__statement { position: static; }
+  .about__grid { grid-template-columns: minmax(0, 1fr); gap: clamp(2rem, 5vw, 3rem); }
 
   /* Side by side, the statement and its photographs keep the spread's feel */
   .about__media {
@@ -35,7 +34,10 @@
     padding: 0;
   }
 
+  .about__media-main { aspect-ratio: 1 / 1; }
   .about__media-inset { position: static; width: 100%; border: 0; }
+
+  .values { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
   .chapter__head--split { grid-template-columns: minmax(0, 1fr); align-items: start; }
   .chapter__head--split .chapter__lead { margin-top: var(--space-4); }
@@ -152,7 +154,10 @@
   .hero__actions .btn { flex: 1 1 100%; }
 
   .about__media { grid-template-columns: minmax(0, 1fr); }
+  .about__media-main { aspect-ratio: 4 / 3; }
   .about__media-inset { display: none; }
+
+  .values { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
   .criteria { grid-template-columns: minmax(0, 1fr); }
 

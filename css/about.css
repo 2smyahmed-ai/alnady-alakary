@@ -1,19 +1,18 @@
 /* ==========================================================================
-   About chapter — an asymmetric spread: the statement and its photograph on
-   one side, the six values as a numbered editorial index on the other.
-   No cards, no icons; the numerals carry the hierarchy.
+   About chapter — the statement beside its photographs, with the six
+   "why the club" claims running full width beneath them.
+
+   An earlier version put the claims in a second column, but they carry no
+   body copy: at 639px against a 1,130px column of text and photographs they
+   left roughly 490px of dead space. Full width suits them and balances.
    ========================================================================== */
 
 .about__grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-  gap: clamp(2.5rem, 1rem + 5vw, 7rem);
-  align-items: start;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(2rem, 1rem + 4vw, 5.5rem);
+  align-items: center;
 }
-
-/* ---- Statement side --------------------------------------------------------- */
-
-.about__statement { position: sticky; top: 7.5rem; }
 
 .about__title {
   margin-block: var(--space-5) var(--space-6);
@@ -22,67 +21,74 @@
 }
 
 .about__lead {
-  max-width: 40ch;
+  max-width: 44ch;
   font-size: var(--fs-lead);
   line-height: 1.95;
 }
 
-/* Two photographs, the smaller one overlapping the larger — a composition
-   rather than two images stacked in a column. */
+/* Two photographs, the smaller overlapping the larger — a composition rather
+   than two images stacked in a column. */
 .about__media {
   position: relative;
-  margin-top: clamp(2rem, 1.2rem + 2.6vw, 3.5rem);
-  padding-inline-end: clamp(2rem, 1rem + 5vw, 6rem);
-  padding-block-end: clamp(2.5rem, 1.5rem + 3vw, 4rem);
+  padding-inline-end: clamp(1.5rem, 0.8rem + 3.5vw, 4rem);
+  padding-block-end: clamp(2rem, 1.2rem + 2.4vw, 3.25rem);
 }
 
-.about__media-main { width: 100%; height: auto; }
+.about__media-main {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
 
 .about__media-inset {
   position: absolute;
   inset-block-end: 0;
   inset-inline-end: 0;
-  width: clamp(8rem, 5rem + 14vw, 15rem);
+  width: clamp(7rem, 4rem + 12vw, 12rem);
   height: auto;
   border: 6px solid var(--bone-100);
 }
 
-/* ---- Why-us index -------------------------------------------------------------
+/* ---- Why-us band ---------------------------------------------------------
    Six short claims, numbered. The numerals carry the hierarchy, which is why
-   there are no icons here, and the rows have no body copy to space around. */
+   there are no icons, and no body copy to space around. */
 
-.values__label { margin-bottom: clamp(1.25rem, 1rem + 1vw, 1.75rem); }
-
-.values { counter-reset: value; }
-
-.value {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: baseline;
-  gap: clamp(1rem, 0.5rem + 1.6vw, 2.25rem);
-  padding-block: clamp(1.1rem, 0.85rem + 1vw, 1.65rem);
+.about__why {
+  margin-top: clamp(2.5rem, 1.6rem + 3vw, 4.5rem);
+  padding-top: clamp(1.5rem, 1.1rem + 1.6vw, 2.5rem);
   border-top: 1px solid var(--rule-on-bone);
 }
 
-.value:first-child { border-top: 0; padding-top: 0; }
+.about__why .label { margin-bottom: clamp(1.25rem, 1rem + 1.2vw, 2rem); }
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: clamp(0.85rem, 0.4rem + 1.4vw, 1.75rem);
+  counter-reset: value;
+}
+
+.value {
+  padding-top: clamp(0.85rem, 0.7rem + 0.6vw, 1.25rem);
+  border-top: 1px solid var(--rule-on-bone);
+}
 
 .value::before {
   content: counter(value, decimal-leading-zero);
   counter-increment: value;
-  font-family: var(--font-display);
-  font-size: clamp(1.75rem, 1.2rem + 1.8vw, 2.75rem);
+  display: block;
+  margin-bottom: 0.6rem;
+  font-size: clamp(1.4rem, 1.05rem + 1.1vw, 2rem);
   font-weight: 400;
   line-height: 1;
   color: var(--bone-fg);
-  opacity: 0.22;
+  opacity: 0.28;
   transition: opacity var(--dur-mid) var(--ease), color var(--dur-mid) var(--ease);
 }
 
 .value:hover::before { opacity: 1; color: var(--accent-ink); }
 
 .value__title {
-  margin-bottom: 0;
-  font-family: var(--font-display);
   font-size: var(--fs-h3);
   font-weight: 600;
   line-height: 1.45;
